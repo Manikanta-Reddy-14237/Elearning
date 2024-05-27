@@ -71,7 +71,7 @@ export default function TSignIn() {
     };
 
     axios
-      .post(`http://localhost:3001/teachlogin`, payload)
+      .post(`https://elearning-khaki.vercel.app/teachlogin`, payload)
       .then((response) => {
         const { token, teacherId } = response.data; 
         localStorage.setItem('authToken', token);
@@ -115,7 +115,7 @@ export default function TSignIn() {
     };
 
     axios
-      .post('http://localhost:3001/teachsignup', payload)
+      .post('https://elearning-khaki.vercel.app/teachsignup', payload)
       .then((response) => {
         const data = response.data;
         if (data.message === 'Teacher registered successfully') {
@@ -128,7 +128,7 @@ export default function TSignIn() {
             mobno: '',
           });
           setSignup(false);
-          navigate('/login/teacherlogin');
+          navigate('/');
         } else if (data.error === 'Email is already in use') {
           toast.error('Email is already in use');
         }
