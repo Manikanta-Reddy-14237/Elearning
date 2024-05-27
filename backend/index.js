@@ -21,10 +21,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.json());
-app.use(cors({'http://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'},
-  methods: ['GET', 'POST'],
-  credentials: true
-}));
+app.use(cors({'http://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'}));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
