@@ -35,19 +35,19 @@ function AdminDashboard() {
             try {
                
                 const token = localStorage.getItem('authToken');
-                const studentData = await axios.get('http://localhost:3001/Studentsdata', {
+                const studentData = await axios.get('https://elearning-khaki.vercel.app/Studentsdata', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Set the Authorization header
                     },
                 });
 
-                const teacherData = await axios.get('http://localhost:3001/Teachersdata', {
+                const teacherData = await axios.get('https://elearning-khaki.vercel.app/Teachersdata', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Set the Authorization header
                     },
                 });
 
-                const response = await axios.get('http://localhost:3001/teacher/files', {
+                const response = await axios.get('https://elearning-khaki.vercel.app/teacher/files', {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
@@ -81,7 +81,7 @@ function AdminDashboard() {
         if (confirmDelete) {
             try {
                 await axios.post(
-                    `http://localhost:3001/teacher/delete/${fileId}`,
+                    `https://elearning-khaki.vercel.app/teacher/delete/${fileId}`,
                     null,
                     {
                         headers: {
@@ -109,7 +109,7 @@ function AdminDashboard() {
     
          const fetchSignedUrl = async (filename) => {
             try {
-                const response = await axios.get(`http://localhost:3001/generate-signed-url/${filename}`, {
+                const response = await axios.get(`https://elearning-khaki.vercel.app/generate-signed-url/${filename}`, {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
@@ -130,7 +130,7 @@ function AdminDashboard() {
                 if (isVideoFile(filename)) {
                     fetchSignedUrl(filename);
                 } else {
-                    setLink(`http://localhost:3001/public/uploads/${filename}`);
+                    setLink(`https://elearning-khaki.vercel.app/public/uploads/${filename}`);
                 }
             }
         };
