@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.json());
 app.use(cors({
-  origin: 'http://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'
+  origin: 'https://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'
 }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
