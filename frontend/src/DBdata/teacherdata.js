@@ -20,7 +20,7 @@ function TeacherDetails() {
                     return navigate("/login");
                 }
                 var token = localStorage.getItem('authToken');
-                const resourceData =await axios.get(`http://elearning-khaki.vercel.app/Teacherdata`, {
+                const resourceData =await axios.get(`https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/Teacherdata`, {
                     headers: {
                         Authorization: `Bearer ${token}`, 
                     },
@@ -40,7 +40,7 @@ function TeacherDetails() {
 
     const removeTeacher = async (teacherId) => {
         try {
-            await axios.post('http://elearning-khaki.vercel.app/teacherdelete', { teacherId }, {
+            await axios.post('https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/teacherdelete', { teacherId }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
