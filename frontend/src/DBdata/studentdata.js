@@ -20,7 +20,7 @@ function StudentDetails() {
                     return navigate("/login");
                 }
                 var token = localStorage.getItem('authToken');
-                const resourceData =await axios.get(`https://elearning-khaki.vercel.app/Studentdata`, {
+                const resourceData =await axios.get(`http://elearning-khaki.vercel.app/Studentdata`, {
                     headers: {
                         Authorization: `Bearer ${token}`, 
                     },
@@ -40,7 +40,7 @@ function StudentDetails() {
 
     const removeStudent = async (studentId) => {
         try {
-            await axios.post('https://elearning-khaki.vercel.app/stddelete', { studentId }, {
+            await axios.post('http://elearning-khaki.vercel.app/stddelete', { studentId }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
