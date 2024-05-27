@@ -34,7 +34,7 @@ export default function SignIn(props) {
       email,
       password,
     };
-    axios.post(`http://localhost:3001/Adminlogin`, payload)
+    axios.post(`https://elearning-khaki.vercel.app/Adminlogin`, payload)
       .then((response) => {
         const { token } = response.data;
         localStorage.setItem('authToken', token);
