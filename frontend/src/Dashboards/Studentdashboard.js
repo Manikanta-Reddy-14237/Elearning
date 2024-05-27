@@ -41,11 +41,11 @@ function StudentDashboard() {
         const fetchProfile = async () => {
             if (!token || !studentId) {
                 console.error('No auth token or student ID found');
-                navigate("/studentlogin");
+                navigate("/");
                 return;
             }
             try {
-                const response = await axios.get("https://elearning-khaki.vercel.app/studentdata", {
+                const response = await axios.get("http://elearning-khaki.vercel.app/studentdata", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -66,11 +66,11 @@ function StudentDashboard() {
         const fetchFiles = async () => {
             if (!token) {
                 console.error('No auth token found');
-                navigate("/studentlogin");
+                navigate("/");
                 return;
             }
             try {
-                const response = await axios.get('https://elearning-khaki.vercel.app/teacher/files', {
+                const response = await axios.get('http://elearning-khaki.vercel.app/teacher/files', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -98,13 +98,13 @@ function StudentDashboard() {
     useEffect(() => {
         const isTokenValid = CheckTokenValidity();
         if (!isTokenValid) {
-            navigate("/studentlogin");
+            navigate("/");
         }
     }, [refresh, navigate]);
 
     const fetchSignedUrl = async (filename) => {
         try {
-            const response = await axios.get(`https://elearning-khaki.vercel.app/generate-signed-url/${filename}`, {
+            const response = await axios.get(`http://elearning-khaki.vercel.app/generate-signed-url/${filename}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -125,7 +125,7 @@ function StudentDashboard() {
             if (isVideoFile(filename)) {
                 fetchSignedUrl(filename);
             } else {
-                setLink(`https://elearning-khaki.vercel.app/public/uploads/${filename}`);
+                setLink(`http://elearning-khaki.vercel.app/public/uploads/${filename}`);
             }
         }
     };
