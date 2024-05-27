@@ -41,12 +41,13 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 const JWT_SECRET = 'your_secret_key';
 
-mongoose.connect('mongodb://127.0.0.1:27017/MainDB', {
+mongoose.connect('mongodb+srv://Manikanta:mongodbpass@elearning.m9pdzdf.mongodb.net/?retryWrites=true&w=majority&appName=Elearning',{
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
 .then(() => console.log('Connected to MainDB'))
 .catch((err) => console.error('Failed to connect to MainDB', err));
+
 
 // Endpoint to serve uploaded files
 app.get("/public/uploads/:filename", (req, res) => {
