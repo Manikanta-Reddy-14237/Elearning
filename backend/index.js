@@ -17,7 +17,7 @@ import authorizeRole from './authorizeRole.js';
 
 
 const app = express();
-app.use(cors({origin:["https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app"}));
+app.use(cors({ origin: [""] }));
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
