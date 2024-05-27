@@ -21,17 +21,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.json());
-app.use(cors({
-  origin: (origin, callback) => {
-    const allowedOrigins = [
-      'https://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'
-    ];
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+app.use(cors({'http://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'},
   methods: ['GET', 'POST'],
   credentials: true
 }));
