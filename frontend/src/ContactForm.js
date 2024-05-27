@@ -20,7 +20,7 @@ const ContactForm = () => {
     e.preventDefault();
     
     // Replace the URL with your backend endpoint
-    const url = 'https://elearning-khaki.vercel.app/contactdetails';
+    const url = 'http://elearning-khaki.vercel.app/contactdetails';
     
     try {
       const response = await fetch(url, {
