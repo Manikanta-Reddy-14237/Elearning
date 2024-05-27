@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors({
   origin: (origin, callback) => {
     const allowedOrigins = [
-      'https://elearningfrontend-gbfblxd2c-manikantas-projects-f78ee616.vercel.app'
+      'https://elearningbackend-9w137qd4e-manikantas-projects-f78ee616.vercel.app'
     ];
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
