@@ -45,7 +45,7 @@ function StudentDashboard() {
                 return;
             }
             try {
-                const response = await axios.get("http://elearning-khaki.vercel.app/studentdata", {
+                const response = await axios.get("https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/studentdata", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -70,7 +70,7 @@ function StudentDashboard() {
                 return;
             }
             try {
-                const response = await axios.get('http://elearning-khaki.vercel.app/teacher/files', {
+                const response = await axios.get('https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/teacher/files', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -104,7 +104,7 @@ function StudentDashboard() {
 
     const fetchSignedUrl = async (filename) => {
         try {
-            const response = await axios.get(`http://elearning-khaki.vercel.app/generate-signed-url/${filename}`, {
+            const response = await axios.get(`https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/generate-signed-url/${filename}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -125,7 +125,7 @@ function StudentDashboard() {
             if (isVideoFile(filename)) {
                 fetchSignedUrl(filename);
             } else {
-                setLink(`http://elearning-khaki.vercel.app/public/uploads/${filename}`);
+                setLink(`https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/public/uploads/${filename}`);
             }
         }
     };
