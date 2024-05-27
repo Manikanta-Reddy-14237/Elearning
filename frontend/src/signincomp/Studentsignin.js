@@ -72,7 +72,7 @@ export default function SSignIn() {
     };
 
     axios
-      .post('https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/stdlogin', payload)
+      .post('https://elearningbackend-manikantas-projects-f78ee616.vercel.app/stdlogin', payload)
       .then((response) => {
         const { token, studentId } = response.data; 
         localStorage.setItem('authToken', token);
@@ -116,7 +116,7 @@ export default function SSignIn() {
     };
 
     axios
-      .post('https://elearningbackend-jg1p54tf9-manikantas-projects-f78ee616.vercel.app/stdsignup', payload)
+      .post('https://elearningbackend-manikantas-projects-f78ee616.vercel.app/stdsignup', payload)
       .then((response) => {
         const data = response.data;
         if (data.message === 'Student registered successfully') {
