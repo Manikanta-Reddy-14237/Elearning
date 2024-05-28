@@ -71,7 +71,7 @@ export default function TSignIn() {
     };
 
     axios
-      .post(`https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teachlogin`, payload)
+      .post(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teachlogin`, payload)
       .then((response) => {
         const { token, teacherId } = response.data; 
         localStorage.setItem('authToken', token);
@@ -115,7 +115,7 @@ export default function TSignIn() {
     };
 
     axios
-      .post('https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teachsignup', payload)
+      .post('https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teachsignup', payload)
       .then((response) => {
         const data = response.data;
         if (data.message === 'Teacher registered successfully') {
