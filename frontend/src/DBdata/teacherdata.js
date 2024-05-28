@@ -20,7 +20,7 @@ function TeacherDetails() {
                     return navigate("/login");
                 }
                 var token = localStorage.getItem('authToken');
-                const resourceData =await axios.get(`https://elearningbackend-manikantas-projects-f78ee616.vercel.app/Teacherdata`, {
+                const resourceData =await axios.get(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/Teacherdata`, {
                     headers: {
                         Authorization: `Bearer ${token}`, 
                     },
@@ -40,7 +40,7 @@ function TeacherDetails() {
 
     const removeTeacher = async (teacherId) => {
         try {
-            await axios.post('https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teacherdelete', { teacherId }, {
+            await axios.post('https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacherdelete', { teacherId }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
