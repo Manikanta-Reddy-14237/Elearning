@@ -35,19 +35,19 @@ function AdminDashboard() {
             try {
                
                 const token = localStorage.getItem('authToken');
-                const studentData = await axios.get('https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/Studentsdata', {
+                const studentData = await axios.get('https://elearningbackend-ten.vercel.app/Studentsdata', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Set the Authorization header
                     },
                 });
 
-                const teacherData = await axios.get('https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/Teachersdata', {
+                const teacherData = await axios.get('https://elearningbackend-ten.vercel.app/Teachersdata', {
                     headers: {
                         Authorization: `Bearer ${token}`, // Set the Authorization header
                     },
                 });
 
-                const response = await axios.get('https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacher/files', {
+                const response = await axios.get('https://elearningbackend-ten.vercel.app/teacher/files', {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
@@ -81,7 +81,7 @@ function AdminDashboard() {
         if (confirmDelete) {
             try {
                 await axios.post(
-                    `https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacher/delete/${fileId}`,
+                    `https://elearningbackend-ten.vercel.app/teacher/delete/${fileId}`,
                     null,
                     {
                         headers: {
@@ -109,7 +109,7 @@ function AdminDashboard() {
     
          const fetchSignedUrl = async (filename) => {
             try {
-                const response = await axios.get(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/generate-signed-url/${filename}`, {
+                const response = await axios.get(`https://elearningbackend-ten.vercel.app/generate-signed-url/${filename}`, {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
@@ -130,7 +130,7 @@ function AdminDashboard() {
                 if (isVideoFile(filename)) {
                     fetchSignedUrl(filename);
                 } else {
-                    setLink(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/public/uploads/${filename}`);
+                    setLink(`https://elearningbackend-ten.vercel.app/public/uploads/${filename}`);
                 }
             }
         };

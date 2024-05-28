@@ -20,7 +20,7 @@ const ContactForm = () => {
     e.preventDefault();
     
     // Replace the URL with your backend endpoint
-    const url = 'https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/contactdetails';
+    const url = 'https://elearningbackend-ten.vercel.app/contactdetails';
     
     try {
       const response = await fetch(url, {
