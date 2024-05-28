@@ -344,6 +344,10 @@ console.log("error with save contacter details",err);
 }
 });
 
+app.get("/confirm",(req,res)=>{
+res.send("heloooo");
+});
+
 
 app.listen('3001', () => {
   console.log("server is running on port 3001");
