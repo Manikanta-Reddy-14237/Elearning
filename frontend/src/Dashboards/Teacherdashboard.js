@@ -44,7 +44,7 @@ function TeacherDashboard() {
 
         const fetchProfile = async () => {
             try {
-                const response = await axios.get("https://elearningbackend-manikantas-projects-f78ee616.vercel.app/Teacherdata", {
+                const response = await axios.get("https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/Teacherdata", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -65,7 +65,7 @@ function TeacherDashboard() {
 
         const fetchFiles = async () => {
             try {
-                const response = await axios.get('https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teacher/files', {
+                const response = await axios.get('https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacher/files', {
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
@@ -92,8 +92,8 @@ function TeacherDashboard() {
 
         try {
             const uploadRoute = isVideoFile(acceptedFiles[0].name)
-                ? "https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teacher/upload/video"
-                : "https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teacher/upload";
+                ? "https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacher/upload/video"
+                : "https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacher/upload";
 
             await axios.post(uploadRoute, formData, {
                 headers: {
@@ -112,7 +112,7 @@ function TeacherDashboard() {
         if (confirmDelete) {
             try {
                 await axios.post(
-                    `https://elearningbackend-manikantas-projects-f78ee616.vercel.app/teacher/delete/${fileId}`,
+                    `https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/teacher/delete/${fileId}`,
                     null,
                     {
                         headers: {
@@ -141,7 +141,7 @@ function TeacherDashboard() {
 
     const fetchSignedUrl = async (filename) => {
         try {
-            const response = await axios.get(`https://elearningbackend-manikantas-projects-f78ee616.vercel.app/generate-signed-url/${filename}`, {
+            const response = await axios.get(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/generate-signed-url/${filename}`, {
                 headers: {
                     authorization: `Bearer ${token}`,
                 },
@@ -163,7 +163,7 @@ function TeacherDashboard() {
             if (isVideoFile(filename)) {
                 fetchSignedUrl(filename);
             } else {
-                setLink(`https://elearningbackend-manikantas-projects-f78ee616.vercel.app/public/uploads/${filename}`);
+                setLink(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/public/uploads/${filename}`);
             }
         }
     };
