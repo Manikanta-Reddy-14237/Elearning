@@ -34,7 +34,7 @@ export default function SignIn(props) {
       email,
       password,
     };
-    axios.post(`https://elearningbackend-manikantas-projects-f78ee616.vercel.app/Adminlogin`, payload)
+    axios.post(`https://elearningbackend-git-main-manikantas-projects-f78ee616.vercel.app/Adminlogin`, payload)
       .then((response) => {
         const { token } = response.data;
         localStorage.setItem('authToken', token);
