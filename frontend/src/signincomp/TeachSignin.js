@@ -55,7 +55,7 @@ export default function TSignIn() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit =async (event) => {
     event.preventDefault();
 
     const { email, password } = formValues;
@@ -70,7 +70,7 @@ export default function TSignIn() {
       password,
     };
 
-    axios
+    await axios
       .post(`https://elearningbackend-ten.vercel.app/teachlogin`, payload)
       .then((response) => {
         const { token, teacherId } = response.data; 
@@ -92,7 +92,7 @@ export default function TSignIn() {
       });
   };
 
-  const handleSignup = (event) => {
+  const handleSignup = async (event) => {
     event.preventDefault();
 
     const { email, password, cnfPassword, username, mobno } = formValues;
@@ -114,7 +114,7 @@ export default function TSignIn() {
       username,
     };
 
-    axios
+    await axios
       .post('https://elearningbackend-ten.vercel.app/teachsignup', payload)
       .then((response) => {
         const data = response.data;
