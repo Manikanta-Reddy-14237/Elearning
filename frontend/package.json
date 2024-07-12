@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "frontend",
-=======
-  "name": "routes",
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,20 +18,13 @@
     "crypto-browserify": "^3.12.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
-<<<<<<< HEAD
     "pdfjs-dist": "3.4.120",
-=======
-    "pdfjs-dist": "^3.4.120",
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     "querystring-es3": "^0.2.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
     "react-dropzone": "^14.2.3",
-<<<<<<< HEAD
     "react-loader-spinner": "^6.1.6",
-=======
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     "react-pdf-viewer": "^0.1.0",
     "react-player": "^2.16.0",
     "react-router-dom": "^6.23.0",

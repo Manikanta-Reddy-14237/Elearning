@@ -10,7 +10,6 @@ import TeacherDetails from './DBdata/teacherdata';
 import StudentDetails from './DBdata/studentdata';
 import {Admlog, Tealog, Stdlog} from "./loginfiles/logincomp.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/styles3.css';
 import NavBar from './NavBar.js';
 import HomePage from './Homepage.js';
 
