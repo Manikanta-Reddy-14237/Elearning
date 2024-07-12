@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-<<<<<<< HEAD
 import './styles/contact.css';
 import cs from './images/cs.jpg'
-=======
-import './styles/styles2.css';
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -24,13 +20,8 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-<<<<<<< HEAD
 
     const url = 'http://localhost:3001/contactdetails';
-=======
-    // Replace the URL with your backend endpoint
-    const url = 'https://elearningbackend-ten.vercel.app/contactdetails';
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     
     try {
       const response = await fetch(url, {
@@ -42,11 +33,7 @@ const ContactForm = () => {
       });
       if (response.status == 201) {
         alert('Form submitted successfully!');
-<<<<<<< HEAD
         setFormData({ name: '', email: '', message: '' }); 
-=======
-        setFormData({ name: '', email: '', message: '' }); // Clear form
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
       } else {
         
         alert('Failed to submit the form');
@@ -58,18 +45,12 @@ const ContactForm = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div className='main_contact_form'>
     <div className='contact_image'>
       <img  src={cs} alt='contact us image' style={{width:"600px",height:"400px"}}/>
     </div>
     <div className="footer_section">
       <form className="contact_form" onSubmit={handleSubmit}>
-=======
-    <footer className="footer-section">
-      <h2>Contact Us</h2>
-      <form className="contact-form" onSubmit={handleSubmit}>
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -100,7 +81,6 @@ const ContactForm = () => {
           required
         ></textarea>
         
-<<<<<<< HEAD
         <button type="submit" className="form_button">
           Submit
         </button>
@@ -108,11 +88,6 @@ const ContactForm = () => {
       </form>
     </div>
     </div>
-=======
-        <input type="submit" value="Submit" />
-      </form>
-    </footer>
->>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
   );
 };
 
