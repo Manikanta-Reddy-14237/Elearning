@@ -16,16 +16,24 @@ import ReactPlayer from 'react-player';
 import PdfViewer from "../Pdfviewer";
 import tbg from '../images/tdb.jpg';
 import Profile from "./Profile";
+<<<<<<< HEAD
 import '../styles/teacherdashboard.css';
 import { DNA } from "react-loader-spinner";
+=======
+import '../styles/styles.css';
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TeacherDashboard() {
     const [files, setFiles] = useState([]);
+<<<<<<< HEAD
     const [videoFiles, setVideoFiles] = useState([]); 
     const [pdfFiles, setPdfFiles] = useState([]);
     const [refresh, setRefresh] = useState(false);
     const [loading, setLoading] = useState(false);
+=======
+    const [refresh, setRefresh] = useState(false);
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     const [selectedFileId, setSelectedFileId] = useState(null);
     const [link, setLink] = useState('');
     const [profile, setProfile] = useState(null);
@@ -35,7 +43,10 @@ function TeacherDashboard() {
     const teacherId = localStorage.getItem("teacherId");
 
     const isVideoFile = (filename) => {
+<<<<<<< HEAD
         if (!filename) return false; 
+=======
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         const videoExtensions = ['.mp4', '.webm', '.ogg'];
         return videoExtensions.some(ext => filename.toLowerCase().endsWith(ext));
     };
@@ -49,7 +60,11 @@ function TeacherDashboard() {
 
         const fetchProfile = async () => {
             try {
+<<<<<<< HEAD
                 const response = await axios.get("http://localhost:3001/Teacherdata", {
+=======
+                const response = await axios.get("https://elearningbackend-ten.vercel.app/Teacherdata", {
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -70,23 +85,35 @@ function TeacherDashboard() {
 
         const fetchFiles = async () => {
             try {
+<<<<<<< HEAD
                 setLoading(true);
                 const response = await axios.get('http://localhost:3001/teacher/files', {
+=======
+                const response = await axios.get('https://elearningbackend-ten.vercel.app/teacher/files', {
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                     headers: {
                         authorization: `Bearer ${token}`,
                     },
                 });
                 setFiles(response.data);
+<<<<<<< HEAD
                 setLoading(false);
+=======
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             } catch (err) {
                 console.error('Error fetching files:', err);
             }
         };
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         fetchProfile();
         fetchFiles();
     }, [refresh, teacherId, token, navigate]);
 
+<<<<<<< HEAD
     
     useEffect(() => {
         const filteredVideoFiles = files
@@ -105,6 +132,8 @@ function TeacherDashboard() {
     }, [files]);
 
     
+=======
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     const handleUpload = async (acceptedFiles) => {
         const formData = new FormData();
         acceptedFiles.forEach(file => {
@@ -117,16 +146,25 @@ function TeacherDashboard() {
 
         try {
             const uploadRoute = isVideoFile(acceptedFiles[0].name)
+<<<<<<< HEAD
                 ? "http://localhost:3001/teacher/upload/video"
                 : "http://localhost:3001/teacher/upload";
             setLoading(true);
+=======
+                ? "https://elearningbackend-ten.vercel.app/teacher/upload/video"
+                : "https://elearningbackend-ten.vercel.app/teacher/upload";
+
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             await axios.post(uploadRoute, formData, {
                 headers: {
                     authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',
                 },
             });
+<<<<<<< HEAD
             setLoading(false);
+=======
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             setRefresh(!refresh);
         } catch (error) {
             console.error("Error uploading files:", error);
@@ -138,7 +176,11 @@ function TeacherDashboard() {
         if (confirmDelete) {
             try {
                 await axios.post(
+<<<<<<< HEAD
                     `http://localhost:3001/teacher/delete/${fileId}`,
+=======
+                    `https://elearningbackend-ten.vercel.app/teacher/delete/${fileId}`,
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                     null,
                     {
                         headers: {
@@ -152,7 +194,11 @@ function TeacherDashboard() {
             }
         }
     };
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     const handleToken = () => {
         localStorage.removeItem("authToken");
         navigate("/");
@@ -167,13 +213,21 @@ function TeacherDashboard() {
 
     const fetchSignedUrl = async (filename) => {
         try {
+<<<<<<< HEAD
             const response = await axios.get(`http://localhost:3001/generate-signed-url/${filename}`, {
+=======
+            const response = await axios.get(`https://elearningbackend-ten.vercel.app/generate-signed-url/${filename}`, {
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                 headers: {
                     authorization: `Bearer ${token}`,
                 },
             });
             const { signedUrl } = response.data;
+<<<<<<< HEAD
             console.log("signedurl", signedUrl);
+=======
+            console.log("signedurl",signedUrl);
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             setLink(signedUrl);
         } catch (err) {
             console.error('Error fetching signed URL:', err);
@@ -189,7 +243,11 @@ function TeacherDashboard() {
             if (isVideoFile(filename)) {
                 fetchSignedUrl(filename);
             } else {
+<<<<<<< HEAD
                 setLink(`http://localhost:3001/public/uploads/${filename}`);
+=======
+                setLink(`https://elearningbackend-ten.vercel.app/public/uploads/${filename}`);
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             }
         }
     };
@@ -200,6 +258,7 @@ function TeacherDashboard() {
     };
 
     return (
+<<<<<<< HEAD
         <div className="twrapper">
             <IconButton aria-label="profile" onClick={toggleProfileBar} color="primary" style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: 1000 }}>
                 {isProfileBarOpen ? <PersonOffSharpIcon className="large-icon" /> : <PersonOutlineSharpIcon className="large-icon" />}
@@ -209,6 +268,14 @@ function TeacherDashboard() {
             </div>
             <div className="drop_zone">
             <Dropzone onDrop={handleUpload} accept={{ 'video/*': ['.mp4', '.webm', '.ogg'], 'application/pdf': ['.pdf'] }}>
+=======
+        <div style={{ backgroundImage: `url(${tbg})`, backgroundSize: 'contain', minHeight: '100vh', transition: 'margin-left 0.3s', padding: '20px' }}>
+            <IconButton aria-label="profile" onClick={toggleProfileBar} color="primary" style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: 1000 }}>
+                {isProfileBarOpen ? <PersonOffSharpIcon className="large-icon"/> : <PersonOutlineSharpIcon className="large-icon"/>}
+            </IconButton>
+            <h1 className="Th">Teacher Dashboard</h1>
+            <Dropzone onDrop={handleUpload} accept="video/*,application/pdf">
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                 {({ getRootProps, getInputProps }) => (
                     <div
                         {...getRootProps()}
@@ -221,6 +288,7 @@ function TeacherDashboard() {
                         }}
                     >
                         <input {...getInputProps()} />
+<<<<<<< HEAD
                         <p style={{color: "black"}}>Drag & drop files here, or click to select files.</p>
                     </div>
                 )}
@@ -284,13 +352,60 @@ function TeacherDashboard() {
                         ):(
                         videoFiles && videoFiles.length>0 ?(videoFiles.map((file) => (
                             <Stack direction="row" spacing={4} key={file._id} className="contents_list">
+=======
+                        <p>Drag & drop files here, or click to select files.</p>
+                    </div>
+                )}
+            </Dropzone>
+            <Container maxWidth="lg">
+                {profile && isProfileBarOpen && <Profile profile={profile} />} {/* Display the profile data */}
+                <h2>Uploaded Pdfs</h2>
+                <ul>
+                    {files.map((file) => (
+                        !isVideoFile(file.filename) ? (
+                            <Stack direction="row" spacing={4} key={file._id}>
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                                 {file.filename}
 
                                 <IconButton aria-label="delete" onClick={() => handleDelete(file._id)}>
                                     <DeleteIcon style={{ color: 'red' }} />
                                 </IconButton>
 
+<<<<<<< HEAD
                                 <IconButton onClick={() => handleOpen(file._id, file.filename)} aria-label="visibility" className="icon_button">
+=======
+                                <IconButton onClick={() => handleOpen(file._id, file.filename)} aria-label="visibility">
+                                    {selectedFileId === file._id ? 
+                                        <VisibilityOffOutlinedIcon  /> : 
+                                        <VisibilityOutlinedIcon  />
+                                    }
+                                </IconButton>
+
+                                {selectedFileId === file._id && (
+                                    <PdfViewer
+                                        link={link}
+                                        headers={{ Authorization: `Bearer ${token}` }}
+                                    />
+                                )}
+                            </Stack>
+                        ) : null
+                    ))}
+                </ul>
+            </Container>
+            <Container maxWidth="lg">
+                <h2>Uploaded Videos</h2>
+                <ul>
+                    {files.map((file) => (
+                        isVideoFile(file.filename) ? (
+                            <Stack direction="row" spacing={4} key={file._id}>
+                                {file.filename}
+
+                                <IconButton aria-label="delete" onClick={() => handleDelete(file._id)}>
+                                    <DeleteIcon style={{ color: 'red' }} />
+                                </IconButton>
+
+                                <IconButton onClick={() => handleOpen(file._id, file.filename)} aria-label="visibility">
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                                     {selectedFileId === file._id ? <VisibilityOffOutlinedIcon /> : <VisibilityOutlinedIcon />}
                                 </IconButton>
 
@@ -303,6 +418,7 @@ function TeacherDashboard() {
                                     />
                                 )}
                             </Stack>
+<<<<<<< HEAD
                     )
                     )
                     ):(<h5>No videos Have Been Uploaded Yet</h5>))}
@@ -311,6 +427,14 @@ function TeacherDashboard() {
        
             <IconButton aria-label="log out" onClick={handleToken} color="error" style={{ position: 'fixed', bottom: '1rem', right: '1rem' }}>
                 <h5>Log out</h5>
+=======
+                        ) : null
+                    ))}
+                </ul>
+            </Container>
+            <IconButton aria-label="log out" onClick={handleToken} color="error" style={{ position: 'fixed', bottom: '1rem', right: '1rem' }}>
+            <h5>Log out</h5>
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                 <LogoutOutlinedIcon />
             </IconButton>
         </div>

@@ -17,7 +17,11 @@ import authorizeRole from './authorizeRole.js';
 
 
 const app = express();
+<<<<<<< HEAD
 app.use(cors({ origin: ["http://localhost:3000"] }));
+=======
+app.use(cors({ origin: ["https://elearningfrontend-xi.vercel.app"] }));
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -52,7 +56,11 @@ mongoose.connect('mongodb+srv://Manikanta:mongodbpass@elearning.m9pdzdf.mongodb.
 .catch((err) => console.error('Failed to connect to MainDB', err));
 
 
+<<<<<<< HEAD
 
+=======
+// Endpoint to serve uploaded files
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 app.get("/public/uploads/:filename", (req, res) => {
   const { filename } = req.params;
   const filePath = path.join(__dirname, "public/uploads", filename);
@@ -130,7 +138,11 @@ app.get('/teacher/files', verifyToken, authorizeRole(['admin', 'teacher', 'stude
       return res.status(500).json({ error: 'Internal Server Error' });
     }
 
+<<<<<<< HEAD
    
+=======
+    // Return the list of files with their names
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     res.status(200).json(
       files.map((file) => ({
         _id: file,
@@ -186,7 +198,11 @@ app.post('/Adminlogin', async (req, res) => {
     if (admin) {
       const isMatch = await bcrypt.compare(password, admin.password);
       if (isMatch) {
+<<<<<<< HEAD
         const token = jwt.sign({ id: admin._id, email: admin.email, role: 'admin' }, JWT_SECRET, { expiresIn: '1h' });
+=======
+        const token = jwt.sign({ id: admin._id, email: admin.email, role: 'admin' }, JWT_SECRET, { expiresIn: '1m' });
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         res.json({ token });
       } else {
         res.status(401).json({ error: 'Invalid password' });
@@ -247,7 +263,11 @@ app.post('/stdlogin', async (req, res) => {
     if (student) {
       const isMatch = await bcrypt.compare(password, student.password);
       if (isMatch) {
+<<<<<<< HEAD
         const token = jwt.sign({ id: student._id, email: student.email, role: "student" }, JWT_SECRET, { expiresIn: '1h' });
+=======
+        const token = jwt.sign({ id: student._id, email: student.email, role: "student" }, JWT_SECRET, { expiresIn: '1m' });
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         const studentId=student._id
         res.json({ token, verified: 'True',studentId });
       } else {

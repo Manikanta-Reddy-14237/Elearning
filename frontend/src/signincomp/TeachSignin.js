@@ -13,13 +13,22 @@ import {
   Paper,
 } from '@mui/material';
 import { LockOutlined as LockOutlinedIcon } from '@mui/icons-material';
+<<<<<<< HEAD
+=======
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import stl from '../images/stl.jpg';
+<<<<<<< HEAD
 import '../styles/teacherSignIn.css';
 
+=======
+
+const defaultTheme = createTheme();
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 
 function Copyright(props) {
   return (
@@ -70,7 +79,11 @@ export default function TSignIn() {
     };
 
     await axios
+<<<<<<< HEAD
       .post(`http://localhost:3001/teachlogin`, payload)
+=======
+      .post(`https://elearningbackend-ten.vercel.app/teachlogin`, payload)
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
       .then((response) => {
         const { token, teacherId } = response.data; 
         localStorage.setItem('authToken', token);
@@ -114,7 +127,11 @@ export default function TSignIn() {
     };
 
     await axios
+<<<<<<< HEAD
       .post('http://localhost:3001/teachsignup', payload)
+=======
+      .post('https://elearningbackend-ten.vercel.app/teachsignup', payload)
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
       .then((response) => {
         const data = response.data;
         if (data.message === 'Teacher registered successfully') {
@@ -138,6 +155,7 @@ export default function TSignIn() {
   };
 
   return (
+<<<<<<< HEAD
     <div className='main_div'> 
 
         <div className='form_image'>
@@ -146,15 +164,53 @@ export default function TSignIn() {
 
           <div className='form'>
             <Avatar sx={{  bgcolor: 'secondary.main' }}>
+=======
+    <ThemeProvider theme={defaultTheme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: `url(${stl})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
               {signup ? 'Teacher Sign Up' : 'Teacher Sign In'}
             </Typography>
+<<<<<<< HEAD
             <form
               onSubmit={signup ? handleSignup : handleSubmit}
               noValidate
               
+=======
+            <Box
+              component="form"
+              onSubmit={signup ? handleSignup : handleSubmit}
+              noValidate
+              sx={{ mt: 1 }}
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             >
               <TextField
                 margin="normal"
@@ -245,6 +301,7 @@ export default function TSignIn() {
                   </Link>
                 </Grid>
               </Grid>
+<<<<<<< HEAD
             </form>
             </div>
           
@@ -252,5 +309,13 @@ export default function TSignIn() {
       
       <ToastContainer />
       </div>
+=======
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+      <ToastContainer />
+    </ThemeProvider>
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
   );
 }

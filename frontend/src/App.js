@@ -10,8 +10,14 @@ import TeacherDetails from './DBdata/teacherdata';
 import StudentDetails from './DBdata/studentdata';
 import {Admlog, Tealog, Stdlog} from "./loginfiles/logincomp.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
+<<<<<<< HEAD
 import './styles/styles3.css';
 import NavBar from './NavBar.js';
+=======
+import './styles/styles.css';
+import './styles/styles3.css';
+import Layout from './Layout';
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 import HomePage from './Homepage.js';
 
 
@@ -51,10 +57,16 @@ function App() {
   return (
     <>
       <Router>
+<<<<<<< HEAD
       <NavBar />
         <Routes>
           
             <Route path='/' element={<HomePage />} />
+=======
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
             <Route path="about" element={<About />} />
             <Route path="Admindashboard" element={<Protected element={<AdminDashboard />} allowedRoles={['admin']} />} />
             <Route path="Teacherdashboard" element={<Protected element={<TeacherDashboard />} allowedRoles={['teacher']} />} />
@@ -64,7 +76,11 @@ function App() {
             <Route path="adminlogin" element={<Admlog />} />
             <Route path="studentlogin" element={<Stdlog />} />
             <Route path="teacherlogin" element={<Tealog />} />
+<<<<<<< HEAD
 
+=======
+          </Route>
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         </Routes>
       </Router>
       <ToastContainer />

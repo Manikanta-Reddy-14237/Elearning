@@ -3,12 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { List, ListItem, ListItemText } from '@mui/material';
 import CheckTokenValidity from '../protection/tokenvalidity';
+<<<<<<< HEAD
 import '../styles/singleentity.css';
 import user from '../images/user.webp';
 import axios from 'axios';
 
 function StudentDetails() {
     const { studentId } = useParams(); 
+=======
+import axios from 'axios';
+
+function StudentDetails() {
+    const { studentId } = useParams(); // Retrieve teacherId from URL params
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
     const [resource, setResources] = useState([]); 
     const navigate = useNavigate();
     console.log("studentId:",studentId);
@@ -22,7 +29,11 @@ function StudentDetails() {
                     return navigate("/login");
                 }
                 var token = localStorage.getItem('authToken');
+<<<<<<< HEAD
                 const resourceData =await axios.get(`http://localhost:3001/Studentdata`, {
+=======
+                const resourceData =await axios.get(`https://elearningbackend-ten.vercel.app/Studentdata`, {
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                     headers: {
                         Authorization: `Bearer ${token}`, 
                     },
@@ -38,11 +49,19 @@ function StudentDetails() {
         };
 
         fetchResources();
+<<<<<<< HEAD
     }, [studentId]); 
 
     const removeStudent = async (studentId) => {
         try {
             await axios.post('http://localhost:3001/stddelete', { studentId }, {
+=======
+    }, [studentId]); // Dependency on teacherId to re-fetch if it changes
+
+    const removeStudent = async (studentId) => {
+        try {
+            await axios.post('https://elearningbackend-ten.vercel.app/stddelete', { studentId }, {
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -54,6 +73,7 @@ function StudentDetails() {
     }
 
     return (
+<<<<<<< HEAD
         <div className='Entitymain_div'>
           <div className='Entity_heading'>
             <h1>Student Resources</h1>
@@ -69,6 +89,18 @@ function StudentDetails() {
             </List>
             </div>
             </div>
+=======
+        <div>
+            <h1>Student Resources</h1>
+            <List>
+                
+                    <ListItem key={resource._id}>
+                        <ListItemText primary={resource.name} />
+                        <button onClick={()=>{removeStudent(resource._id)}}>Remove Student</button>
+                    </ListItem>
+            
+            </List>
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
         </div>
     );
 }

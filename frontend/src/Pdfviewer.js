@@ -3,7 +3,10 @@ import { Worker, Viewer } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+<<<<<<< HEAD
 import './styles/studentdashboard.css';
+=======
+>>>>>>> 116737f30caac5c59e0985afd25f55fc9ab928a4
 
 const PdfViewer = ({ link, headers }) => {
     const [pdfUrl, setPdfUrl] = useState(null);
