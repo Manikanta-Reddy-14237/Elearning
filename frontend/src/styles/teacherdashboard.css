@@ -1,0 +1,92 @@
+.twrapper {
+  margin-top: 76px;
+  background-color: rgb(243, 210, 165);
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  min-height: 100vh;
+  height: max-content;
+}
+
+.Tmain_heading {
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.TTh {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem; 
+  color: #333; 
+}
+
+.drop_zone {
+  grid-row: 2;
+  grid-column: 1;
+  margin: 0 auto;
+  width: 60%;
+  background-color: #f0f0f0;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px dashed gray;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.tpdfs_div, .tved_div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto; 
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.tpdfs_div > h2, .tved_div > h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.large-icon {
+  font-size: 50px !important;
+  color: #f0f0f0;
+}
+
+.react-player {
+  width: 100%;
+  height: auto;
+}
+
+.IconButton {
+  margin-right: 0.5rem;
+}
+
+
+.contents_list{
+  padding: 3px;
+  padding-left: 15px;
+  background-color: antiquewhite;
+  border-radius: 12px;
+  margin: 4px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contents_list:hover {
+  background-color: #f0e5d8; 
+  transform: translateY(-5px); 
+  cursor: pointer;
+}
+
+.icon_button{
+margin-left: 10px !important;
+}

@@ -1,0 +1,34 @@
+.Navbar{
+    z-index: 100;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 11vh;
+    padding: 10px;
+    background-color: rgb(54, 206, 206);
+    color:#f6efef;
+    font-family:'Times New Roman', Times, serif;
+   top: 0;
+}
+
+.home_header{
+    margin-top: 16px;
+}
+
+.about_header{
+    margin-top: 16px;
+}
+
+.home_header > h3:hover{
+   cursor: pointer ;
+}
+
+.about_header > h3:hover{
+  cursor: pointer;
+}
+
+.login_options{
+    background-color:rgb(54, 206, 206);
+}
